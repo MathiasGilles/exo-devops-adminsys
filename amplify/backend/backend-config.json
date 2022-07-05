@@ -1,1 +1,8 @@
-{}
+{
+  "storage": {
+    "dynamo001": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
