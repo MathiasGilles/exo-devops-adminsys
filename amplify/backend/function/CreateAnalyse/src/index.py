@@ -18,7 +18,8 @@ def handler(event, context):
       ressource = boto3.resource('dynamodb',region_name="eu-west-1")
       table_name = os.environ['STORAGE_DYNAMO001_NAME']
       table = ressource.Table(table_name)
-      create_analyse(table,event['body'])
+      #create_analyse(table,event['body'])
+      create_analyse(table)
       response['statusCode'] = 200
     except (Exception, ClientError) as error:
       response['statusCode'] = 400
