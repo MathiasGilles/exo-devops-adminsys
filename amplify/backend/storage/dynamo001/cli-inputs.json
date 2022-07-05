@@ -5,6 +5,7 @@
     "fieldName": "id",
     "fieldType": "string"
   },
+
   "gsi": [],
   "triggerFunctions": []
 }
