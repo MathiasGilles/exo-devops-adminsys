@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/createAnalyse": {
+      "name": "/createAnalyse",
+      "lambdaFunction": "CreateAnalyse",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    }
+  }
+}

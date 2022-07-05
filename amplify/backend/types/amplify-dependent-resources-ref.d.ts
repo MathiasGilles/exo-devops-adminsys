@@ -8,5 +8,31 @@ export type AmplifyDependentResourcesAttributes = {
             "PartitionKeyType": "string",
             "Region": "string"
         }
+    },
+    "function": {
+        "CreateAnalyse": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
+        }
+    },
+    "auth": {
+        "exodevopsadminsys": {
+            "IdentityPoolId": "string",
+            "IdentityPoolName": "string",
+            "UserPoolId": "string",
+            "UserPoolArn": "string",
+            "UserPoolName": "string",
+            "AppClientIDWeb": "string",
+            "AppClientID": "string"
+        }
+    },
+    "api": {
+        "api001": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
+        }
     }
 }
