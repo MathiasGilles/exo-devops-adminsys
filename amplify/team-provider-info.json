@@ -80,6 +80,10 @@
         "CreateAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
           "s3Key": "amplify-builds/CreateAnalyse-36413933487059414748-build.zip"
+        },
+        "getValidateUserId": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
+          "s3Key": "amplify-builds/getValidateUserId-676436724c6c58734c31-build.zip"
         }
       }
     }
