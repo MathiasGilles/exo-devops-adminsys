@@ -28,6 +28,10 @@
         "exodevopsadminsysutils": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
           "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion8d77a05e-build.zip"
+        },
+        "getAnalyses": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
+          "s3Key": "amplify-builds/getAnalyses-396c7a7576664f6c6177-build.zip"
         }
       }
     }

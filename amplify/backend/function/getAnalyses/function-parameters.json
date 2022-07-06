@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "storage": {
+      "dynamo001": [
+        "read"
+      ],
+      "users": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "exodevopsadminsysutils",
+      "env": "dev",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ]
+}

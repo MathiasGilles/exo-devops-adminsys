@@ -10,6 +10,16 @@
           "create"
         ]
       }
+    },
+    "/getAnalyses": {
+      "name": "/getAnalyses",
+      "lambdaFunction": "getAnalyses",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
     }
   }
 }
