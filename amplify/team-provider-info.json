@@ -19,7 +19,15 @@
       "function": {
         "CreateAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
-          "s3Key": "amplify-builds/CreateAnalyse-7a70694e734b7676732f-build.zip"
+          "s3Key": "amplify-builds/CreateAnalyse-3439636b4e6243386c42-build.zip"
+        },
+        "getValidateUserId": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
+          "s3Key": "amplify-builds/getValidateUserId-7a7067642b776f582b55-build.zip"
+        },
+        "exodevopsadminsysutils": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
+          "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion8d77a05e-build.zip"
         }
       }
     }
