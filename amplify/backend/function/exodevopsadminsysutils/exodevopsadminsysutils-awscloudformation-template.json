@@ -20,7 +20,7 @@
     }
   },
   "Resources": {
-    "LambdaLayerVersion6006e7e9": {
+    "LambdaLayerVersion8d77a05e": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": {
@@ -51,19 +51,19 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivate6006e7e9": {
+    "LambdaLayerPermissionPrivate8d77a05e": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
         "LayerVersionArn": {
-          "Ref": "LambdaLayerVersion6006e7e9"
+          "Ref": "LambdaLayerVersion8d77a05e"
         },
         "Principal": {
           "Ref": "AWS::AccountId"
         }
       }
     },
-    "LambdaLayerVersion4c9f0698": {
+    "LambdaLayerVersiondf974444": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": [
@@ -73,9 +73,9 @@
           "S3Bucket": {
             "Ref": "deploymentBucketName"
           },
-          "S3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion4c9f0698-build.zip"
+          "S3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersiondf974444-build.zip"
         },
-        "Description": "Updated layer version 2022-07-06T10:23:21.572Z",
+        "Description": "Updated layer version 2022-07-06T12:27:47.034Z",
         "LayerName": {
           "Fn::Sub": [
             "exodevopsadminsysutils-${env}",
@@ -90,48 +90,11 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionPrivate4c9f0698": {
+    "LambdaLayerPermissionPrivatedf974444": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:eu-west-1:355243151688:layer:exodevopsadminsysutils-julesenv:2",
-        "Principal": {
-          "Ref": "AWS::AccountId"
-        }
-      }
-    },
-    "LambdaLayerVersion91467635": {
-      "Type": "AWS::Lambda::LayerVersion",
-      "Properties": {
-        "CompatibleRuntimes": [
-          "python3.8"
-        ],
-        "Content": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion91467635-build.zip"
-        },
-        "Description": "Updated layer version 2022-07-06T10:17:42.666Z",
-        "LayerName": {
-          "Fn::Sub": [
-            "exodevopsadminsysutils-${env}",
-            {
-              "env": {
-                "Ref": "env"
-              }
-            }
-          ]
-        }
-      },
-      "DeletionPolicy": "Delete",
-      "UpdateReplacePolicy": "Retain"
-    },
-    "LambdaLayerPermissionPrivate91467635": {
-      "Type": "AWS::Lambda::LayerVersionPermission",
-      "Properties": {
-        "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:eu-west-1:355243151688:layer:exodevopsadminsysutils-julesenv:1",
+        "LayerVersionArn": "arn:aws:lambda:eu-west-1:355243151688:layer:exodevopsadminsysutils-dev:1",
         "Principal": {
           "Ref": "AWS::AccountId"
         }
@@ -141,7 +104,7 @@
   "Outputs": {
     "Arn": {
       "Value": {
-        "Ref": "LambdaLayerVersion6006e7e9"
+        "Ref": "LambdaLayerVersion8d77a05e"
       }
     }
   }
