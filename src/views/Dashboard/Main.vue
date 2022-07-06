@@ -12,7 +12,7 @@ export default {
   methods: {
     handleClick: async () => {
       try {
-        await API.post('api001', '/createAnalyse', {})
+        await API.post('api001', '/createAnalyse')
       } catch (e) {
         console.log(e);
       }

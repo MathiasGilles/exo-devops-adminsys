@@ -28,14 +28,14 @@ def handler(event, context):
     return response
 
 
-def create_analyse(table,body):
+def create_analyse(table):
     current_date = f'{str(datetime.now().isoformat())}Z'
     id = str(uuid.uuid1())
 
     to_create = {
         "id": id,
-        "title": body['title'],
-        "description": body['description'],
+        "title": None,
+        "description": None,
         "created_by": None,
         "updated_by": None,
         "created_at": current_date,
