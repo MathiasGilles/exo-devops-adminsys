@@ -18,7 +18,8 @@ def handler(event, context):
       ressource = boto3.resource('dynamodb',region_name="eu-west-1")
       table_name = os.environ['STORAGE_DYNAMO001_NAME']
       table = ressource.Table(table_name)
-      create_analyse(table,event['body'])
+      #create_analyse(table,event['body'])
+      create_analyse(table)
       response['statusCode'] = 200
     except (Exception, ClientError) as error:
       response['statusCode'] = 400
@@ -27,14 +28,14 @@ def handler(event, context):
     return response
 
 
-def create_analyse(table,body):
+def create_analyse(table):
     current_date = f'{str(datetime.now().isoformat())}Z'
     id = str(uuid.uuid1())
 
     to_create = {
         "id": id,
-        "title": body['title'],
-        "description": body['description'],
+        "title": None,
+        "description": None,
         "created_by": None,
         "updated_by": None,
         "created_at": current_date,

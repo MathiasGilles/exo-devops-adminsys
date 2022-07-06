@@ -1,9 +1,10 @@
 <template>
-  <v-app>
-    <v-main>
+  <amplify-authenticator>
+    <div>
       <router-view/>
-    </v-main>
-  </v-app>
+      <amplify-sign-out></amplify-sign-out>
+    </div>
+  </amplify-authenticator>
 </template>
 
 <script>
