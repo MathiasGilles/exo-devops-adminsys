@@ -2,7 +2,7 @@ import json
 import boto3
 import os
 from botocore.exceptions import ClientError
-#from utils import get_user_id
+from utils import get_user_id
 def handler(event, context):
     try:
         ressource = boto3.resource('dynamodb',region_name="eu-west-1")
@@ -13,8 +13,7 @@ def handler(event, context):
         table_user_name = os.environ['STORAGE_USERS_NAME']
         table_user = ressource.Table(table_user_name)
 
-        #user_id = get_user_id(event)
-        user_id = "099575db-7744-4c70-90fd-2a73da0fc285"
+        user_id = get_user_id(event)
 
         user_analyses = get_user_analyses(user_id,table_user)
 
