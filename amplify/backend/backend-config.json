@@ -16,6 +16,13 @@
       "service": "Lambda",
       "dependsOn": [
         {
+          "category": "function",
+          "resourceName": "exodevopsadminsysutils",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
           "category": "storage",
           "resourceName": "dynamo001",
           "attributes": [
@@ -41,6 +48,11 @@
           ]
         }
       ]
+    },
+    "exodevopsadminsysutils": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
     }
   },
   "auth": {

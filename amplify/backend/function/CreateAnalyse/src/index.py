@@ -4,7 +4,7 @@ import os
 import uuid
 from botocore.exceptions import ClientError
 from datetime import datetime
-
+from utils import get_user_id
 
 def handler(event, context):
     response = {
@@ -19,7 +19,7 @@ def handler(event, context):
       table_name = os.environ['STORAGE_DYNAMO001_NAME']
       table = ressource.Table(table_name)
       #create_analyse(table,event['body'])
-      create_analyse(table)
+      create_analyse(table, event)
       response['statusCode'] = 200
     except (Exception, ClientError) as error:
       response['statusCode'] = 400
@@ -28,16 +28,17 @@ def handler(event, context):
     return response
 
 
-def create_analyse(table):
+def create_analyse(table, event):
     current_date = f'{str(datetime.now().isoformat())}Z'
     id = str(uuid.uuid1())
+    userId = get_user_id(event)
 
     to_create = {
         "id": id,
         "title": None,
         "description": None,
-        "created_by": None,
-        "updated_by": None,
+        "created_by": userId,
+        "updated_by": userId,
         "created_at": current_date,
         "updated_at": current_date,
         "transcript": None,
