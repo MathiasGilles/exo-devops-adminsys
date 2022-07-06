@@ -27,6 +27,10 @@
     "storagedynamo001StreamArn": {
       "Type": "String",
       "Default": "storagedynamo001StreamArn"
+    },
+    "functionexodevopsadminsysutilsArn": {
+      "Type": "String",
+      "Default": "functionexodevopsadminsysutilsArn"
     }
   },
   "Conditions": {
@@ -100,7 +104,11 @@
           ]
         },
         "Runtime": "python3.8",
-        "Layers": [],
+        "Layers": [
+          {
+            "Ref": "functionexodevopsadminsysutilsArn"
+          }
+        ],
         "Timeout": 25
       }
     },
