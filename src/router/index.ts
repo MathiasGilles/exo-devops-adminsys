@@ -8,7 +8,8 @@ const routes = [
         path: '/',
         name: 'Dashboard',
         component: () => import("../views/Dashboard/Main.vue")
-    }
+    },
+    {path: '/analyses/:id', component: () => import('../views/GetOne/Main.vue')},
 ]
 
 const router = new VueRouter({
