@@ -1,1 +1,9 @@
-{ "test": "event" }
+{
+  "pathParameters": {
+    "proxy": "ea51672c-fdcb-11ec-9393-8ade3b48d2ea"
+  },
+  "body": {
+    "title": "YOUOUUU",
+    "description": "Ma description"
+  }
+}
