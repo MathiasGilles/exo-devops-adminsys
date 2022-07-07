@@ -11,7 +11,7 @@
     <input type="text" name="description" id="description" v-model="formData.description">
     <br>
     <div style="display: flex">
-      <button>Delete</button>
+      <button @click="deleteAnalyse">Delete</button>
       <button @click="UpdateAnalyse">Save</button>
     </div>
     <br>
@@ -56,6 +56,17 @@ export default {
     },
     async getStorage(){
       return this.storedImage = await Storage.get('img.jpeg')
+    },
+    deleteAnalyse: async function () {
+      const option = {
+        body: {
+          id: this.id
+        }
+      }
+      const response = await API.post('api001', '/deleteAnalyse', option).then(
+          () => this.$router.push('/')
+      );
+      console.log(response)
     }
   }
 }
