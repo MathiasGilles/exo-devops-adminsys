@@ -1,0 +1,12 @@
+{
+  "resourceName": "asset",
+  "policyUUID": "e0c21b99",
+  "bucketName": "asset",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
