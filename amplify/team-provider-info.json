@@ -31,7 +31,7 @@
         },
         "getAnalyses": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
-          "s3Key": "amplify-builds/getAnalyses-342b50635a374c615767-build.zip"
+          "s3Key": "amplify-builds/getAnalyses-61414870657668705a33-build.zip"
         }
       }
     }

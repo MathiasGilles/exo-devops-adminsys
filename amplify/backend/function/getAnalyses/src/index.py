@@ -3,9 +3,18 @@ import boto3
 import os
 from botocore.exceptions import ClientError
 from utils import get_user_id
+
 def handler(event, context):
+    response = {
+        'headers': {
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods':'GET'
+        }
+    }
+
     try:
-        ressource = boto3.resource('dynamodb',region_name="eu-west-1")
+        ressource = boto3.resource('dynamodb')
 
         table_analyse_name = os.environ['STORAGE_DYNAMO001_NAME']
         table_analyse = ressource.Table(table_analyse_name)
@@ -17,12 +26,15 @@ def handler(event, context):
 
         user_analyses = get_user_analyses(user_id,table_user)
 
-        analyses = get_analyses_from_id(user_analyses,table_analyse,ressource)
+        response['statusCode'] = 200
+        response['body'] = get_analyses_from_id(user_analyses,table_analyse,ressource)
 
     except (Exception, ClientError) as error:
-        analyses = json.dumps({"error": str(error)})
+        print(error)
+        response['statusCode'] = 400
+        response['body'] = json.dumps({"error": str(error)})
 
-    return analyses
+    return response
 
 def get_user_analyses(user_id, user_table):
 
@@ -48,4 +60,4 @@ def get_analyses_from_id(list,item_table,ressource):
         }
     )
 
-    return data['Responses'][item_table.name]
+    return json.dumps(data['Responses'][item_table.name])

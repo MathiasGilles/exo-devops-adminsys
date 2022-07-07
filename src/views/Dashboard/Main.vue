@@ -1,7 +1,7 @@
 <template>
   <div
       style="display: flex; justify-content: center; align-items: center; height: 80%; padding: 3rem; background: darkgrey">
-    <button @click="handleClick">Click me</button>
+    <button @click="handleClick">Create analyse button</button>
   </div>
 </template>
 
@@ -16,7 +16,18 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    fetchAnalysis: async () => {
+      try {
+        const response = await API.get('api001', '/getAnalyses')
+        console.log(response);
+      } catch (e) {
+        console.log(e)
+      }
     }
+  },
+  mounted: async function () {
+    await this.fetchAnalysis()
   }
 }
 </script>
