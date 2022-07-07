@@ -82,7 +82,8 @@
           "deploymentBucketName": "amplify-exodevopsadminsys-test-103559-deployment",
           "s3Key": "amplify-builds/getAnalyses-676945476f7953754c61-build.zip"
         },
-        "updateAnalyse": {}
+        "updateAnalyse": {},
+        "deleteAnalyse": {}
       }
     }
   },
@@ -127,7 +128,7 @@
         },
         "deleteAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/deleteAnalyse-516749366c6d31676a6f-build.zip"
+          "s3Key": "amplify-builds/deleteAnalyse-647a614455704a6c4666-build.zip"
         }
       }
     }

@@ -14,9 +14,9 @@
     {
       "type": "ProjectLayer",
       "resourceName": "exodevopsadminsysutils",
-      "env": "julesenv",
       "version": "Always choose latest version",
-      "isLatestVersionSelected": true
+      "isLatestVersionSelected": true,
+      "env": "julesenv"
     }
   ]
 }
