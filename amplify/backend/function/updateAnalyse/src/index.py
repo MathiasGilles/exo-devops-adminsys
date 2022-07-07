@@ -17,18 +17,16 @@ def handler(event, context):
     ressource = boto3.resource('dynamodb', region_name="eu-west-1")
     table_name = os.environ['STORAGE_DYNAMO001_NAME']
     table = ressource.Table(table_name)
+    body = json.loads(event['body'])
 
-    path_param = event['pathParameters']
-    analyse_id = path_param['proxy']
-
-    if analyse_id is None or len(analyse_id) <= 0:
-        raise ValueError('Input error: analyse_id')
+    if body['id'] is None or len(body['id']) <= 0:
+        raise ValueError('Input error: id')
 
     current_date = f'{str(datetime.now().isoformat())}Z'
 
     to_update = {
-        ":title": event['body']['title'],
-        ":description": event['body']['description'],
+        ":title": body['title'],
+        ":description": body['description'],
         ":update": current_date
     }
 
@@ -36,12 +34,13 @@ def handler(event, context):
 
     try:
         table.update_item(
-            Key={'id': analyse_id},
+            Key={'id': body['id']},
             UpdateExpression=expression,
             ExpressionAttributeValues=to_update
         )
-        response['body'] = json.dumps({'analyse_id': analyse_id})
+        response['body'] = json.dumps({'id': body['id']})
+        response['statusCode'] = 200
     except (Exception, ClientError) as error:
         print(error)
-
+        response['statusCode'] = 500
     return response

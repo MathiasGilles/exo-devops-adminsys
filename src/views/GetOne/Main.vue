@@ -1,7 +1,6 @@
 <template>
   <div>
-    Formulaire update analyse avec l'id actuellement: {{ id }}
-    {{ formData.description }}
+    <h2>Form modification id: {{id}}</h2>
     <br>
     <label for="title">Titre</label>
     <br>
@@ -39,16 +38,16 @@ export default {
     }
   },
   methods: {
-    UpdateAnalyse: function () {
-      API
-          .put('api001', '/updateAnalyse', this.formData)
-          .then(response => {
-            console.log(response)
-            return response;
-          })
-          .catch(error => {
-            console.log(error);
-          });
+    UpdateAnalyse: async function () {
+      const option = {
+        body: {
+          id: this.id,
+          ...this.formData
+        }
+      }
+      console.log(option)
+      const response = await API.post('api001', '/updateAnalyse', option)
+      console.log(response);
     }
   }
 }
