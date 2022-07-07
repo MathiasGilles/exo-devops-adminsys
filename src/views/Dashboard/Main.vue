@@ -16,6 +16,7 @@
       <div>{{ items.description ?? "Null" }}</div>
       <div>{{ items.transcript ?? "Null" }}</div>
       <div>{{ items.created_at }}</div>
+      <button @click="removeAnalyse">delete</button>
     </div>
     <div style="display: flex;gap: 20px;">
       <p>Mathias GILLES</p>
@@ -47,6 +48,13 @@ export default {
     fetchAnalysis: async () => {
       try {
         return await API.get('api001', '/getAnalyses')
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    removeAnalyse: async () => {
+      try {
+        return await API.post('api001', '/deleteAnalyse')
       } catch (e) {
         console.log(e)
       }
