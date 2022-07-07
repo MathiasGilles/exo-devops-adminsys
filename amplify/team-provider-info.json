@@ -100,7 +100,8 @@
         "exodevopsadminsysutils": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
           "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion6006e7e9-build.zip"
-        }
+        },
+        "getAnalyses": {}
       }
     }
   }

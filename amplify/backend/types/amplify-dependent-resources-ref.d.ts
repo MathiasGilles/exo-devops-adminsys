@@ -32,12 +32,6 @@ export type AmplifyDependentResourcesAttributes = {
         },
         "exodevopsadminsysutils": {
             "Arn": "string"
-        },
-        "getAnalyses": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
         }
     },
     "auth": {

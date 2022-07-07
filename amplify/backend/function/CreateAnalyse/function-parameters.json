@@ -3,9 +3,6 @@
     "storage": {
       "dynamo001": [
         "create"
-      ],
-      "users": [
-        "update"
       ]
     }
   },
@@ -13,9 +10,9 @@
     {
       "type": "ProjectLayer",
       "resourceName": "exodevopsadminsysutils",
+      "env": "julesenv",
       "version": "Always choose latest version",
-      "isLatestVersionSelected": true,
-      "env": "dev"
+      "isLatestVersionSelected": true
     }
   ]
 }
