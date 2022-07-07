@@ -7,6 +7,11 @@
     "users": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "asset": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   },
   "function": {
