@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div
-        style="display: flex; justify-content: center; align-items: center; height: 80%; padding: 3rem; background: darkgrey">
-      <button @click="handleClick">Create analyse button</button>
-    </div>
+  <div
+      style="display: flex; justify-content: center; align-items: center; height: 80%; padding: 3rem; background: darkgrey;flex-direction: column">
+    <button @click="handleClick">Create analyse button</button>
     <div style="border: 1px solid black; display: flex; justify-content: space-around">
       <div>id</div>
       <div>title</div>
@@ -18,6 +16,12 @@
       <div>{{ items.description ?? "Null" }}</div>
       <div>{{ items.transcript ?? "Null" }}</div>
       <div>{{ items.created_at }}</div>
+    </div>
+    <div style="display: flex;gap: 20px;">
+      <p>Mathias GILLES</p>
+      <p>Jules DAYAUX</p>
+      <p>Sosthène FRUCHARD</p>
+      <p>Yanny OUZID</p>
     </div>
   </div>
 </template>
