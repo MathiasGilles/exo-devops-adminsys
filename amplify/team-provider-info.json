@@ -19,7 +19,7 @@
       "function": {
         "CreateAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
-          "s3Key": "amplify-builds/CreateAnalyse-3439636b4e6243386c42-build.zip"
+          "s3Key": "amplify-builds/CreateAnalyse-5869637231575a504f70-build.zip"
         },
         "getValidateUserId": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
@@ -31,7 +31,7 @@
         },
         "getAnalyses": {
           "deploymentBucketName": "amplify-exodevopsadminsys-dev-102415-deployment",
-          "s3Key": "amplify-builds/getAnalyses-342b50635a374c615767-build.zip"
+          "s3Key": "amplify-builds/getAnalyses-7566796d43576b44696a-build.zip"
         }
       }
     }
@@ -66,8 +66,7 @@
         "exodevopsadminsys": {}
       },
       "function": {
-        "CreateAnalyse": {},
-        "getValidateUserId": {}
+        "CreateAnalyse": {}
       }
     }
   },
@@ -92,7 +91,7 @@
       "function": {
         "CreateAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/CreateAnalyse-436b74314b5a514f4177-build.zip"
+          "s3Key": "amplify-builds/CreateAnalyse-496e346169703962674a-build.zip"
         },
         "getValidateUserId": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
@@ -100,9 +99,12 @@
         },
         "exodevopsadminsysutils": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion6006e7e9-build.zip"
+          "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion0d2da51b-build.zip"
         },
-        "getAnalyses": {}
+        "deleteAnalyse": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
+          "s3Key": "amplify-builds/deleteAnalyse-676b387142755a55376e-build.zip"
+        }
       }
     }
   }
