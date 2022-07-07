@@ -20,6 +20,17 @@
           "read"
         ]
       }
+    },
+    "/updateAnalyse": {
+      "name": "/updateAnalyse",
+      "lambdaFunction": "updateAnalyse",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read",
+          "update"
+        ]
+      }
     }
   }
 }

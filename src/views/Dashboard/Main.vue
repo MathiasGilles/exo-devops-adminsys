@@ -11,7 +11,7 @@
     </div>
     <div style="border: 1px solid black; display: flex; justify-content: space-around"
          v-for="(items, index) in analyses" :key="index">
-      <div><a :href="'/analyse?id=' + items.id">{{ items.id }}</a></div>
+      <div><a :href="'/analyses/' + items.id">{{ items.id }}</a></div>
       <div>{{ items.title ?? "Null" }}</div>
       <div>{{ items.description ?? "Null" }}</div>
       <div>{{ items.transcript ?? "Null" }}</div>

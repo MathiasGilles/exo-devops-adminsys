@@ -94,6 +94,22 @@
           ]
         }
       ]
+    },
+    "updateAnalyse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "dynamo001",
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -138,6 +154,14 @@
         {
           "category": "function",
           "resourceName": "getAnalyses",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "updateAnalyse",
           "attributes": [
             "Name",
             "Arn"
