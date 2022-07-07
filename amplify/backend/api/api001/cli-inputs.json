@@ -30,6 +30,18 @@
           "create"
         ]
       }
+    },
+    "/deleteAnalyse": {
+      "name": "/deleteAnalyse",
+      "lambdaFunction": "deleteAnalyse",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
     }
   }
 }
