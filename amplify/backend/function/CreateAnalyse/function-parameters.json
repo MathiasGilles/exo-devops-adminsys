@@ -3,8 +3,19 @@
     "storage": {
       "dynamo001": [
         "create"
+      ],
+      "users": [
+        "update"
       ]
     }
   },
-  "lambdaLayers": []
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "exodevopsadminsysutils",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "julesenv"
+    }
+  ]
 }

@@ -10,6 +10,38 @@
           "create"
         ]
       }
+    },
+    "/getAnalyses": {
+      "name": "/getAnalyses",
+      "lambdaFunction": "getAnalyses",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
+    },
+    "/updateAnalyse": {
+      "name": "/updateAnalyse",
+      "lambdaFunction": "updateAnalyse",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    },
+    "/deleteAnalyse": {
+      "name": "/deleteAnalyse",
+      "lambdaFunction": "deleteAnalyse",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
     }
   }
 }

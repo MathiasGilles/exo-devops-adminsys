@@ -27,6 +27,22 @@
     "storagedynamo001StreamArn": {
       "Type": "String",
       "Default": "storagedynamo001StreamArn"
+    },
+    "functionexodevopsadminsysutilsArn": {
+      "Type": "String",
+      "Default": "functionexodevopsadminsysutilsArn"
+    },
+    "storageusersName": {
+      "Type": "String",
+      "Default": "storageusersName"
+    },
+    "storageusersArn": {
+      "Type": "String",
+      "Default": "storageusersArn"
+    },
+    "storageusersStreamArn": {
+      "Type": "String",
+      "Default": "storageusersStreamArn"
     }
   },
   "Conditions": {
@@ -90,6 +106,15 @@
             },
             "STORAGE_DYNAMO001_STREAMARN": {
               "Ref": "storagedynamo001StreamArn"
+            },
+            "STORAGE_USERS_NAME": {
+              "Ref": "storageusersName"
+            },
+            "STORAGE_USERS_ARN": {
+              "Ref": "storageusersArn"
+            },
+            "STORAGE_USERS_STREAMARN": {
+              "Ref": "storageusersStreamArn"
             }
           }
         },
@@ -100,7 +125,11 @@
           ]
         },
         "Runtime": "python3.8",
-        "Layers": [],
+        "Layers": [
+          {
+            "Ref": "functionexodevopsadminsysutilsArn"
+          }
+        ],
         "Timeout": 25
       }
     },
@@ -218,6 +247,29 @@
                     [
                       {
                         "Ref": "storagedynamo001Arn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageusersArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageusersArn"
                       },
                       "index/*"
                     ]
