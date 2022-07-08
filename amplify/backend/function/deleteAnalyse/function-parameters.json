@@ -2,9 +2,10 @@
   "permissions": {
     "storage": {
       "dynamo001": [
-        "create"
+        "delete"
       ],
       "users": [
+        "read",
         "update"
       ]
     }

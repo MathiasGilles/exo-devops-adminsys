@@ -27,6 +27,22 @@
     "storagedynamo001StreamArn": {
       "Type": "String",
       "Default": "storagedynamo001StreamArn"
+    },
+    "storageusersName": {
+      "Type": "String",
+      "Default": "storageusersName"
+    },
+    "storageusersArn": {
+      "Type": "String",
+      "Default": "storageusersArn"
+    },
+    "storageusersStreamArn": {
+      "Type": "String",
+      "Default": "storageusersStreamArn"
+    },
+    "functionexodevopsadminsysutilsArn": {
+      "Type": "String",
+      "Default": "functionexodevopsadminsysutilsArn"
     }
   },
   "Conditions": {
@@ -59,12 +75,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "updateAnalyse",
+            "deleteAnalyse",
             {
               "Fn::Join": [
                 "",
                 [
-                  "updateAnalyse",
+                  "deleteAnalyse",
                   "-",
                   {
                     "Ref": "env"
@@ -90,6 +106,15 @@
             },
             "STORAGE_DYNAMO001_STREAMARN": {
               "Ref": "storagedynamo001StreamArn"
+            },
+            "STORAGE_USERS_NAME": {
+              "Ref": "storageusersName"
+            },
+            "STORAGE_USERS_ARN": {
+              "Ref": "storageusersArn"
+            },
+            "STORAGE_USERS_STREAMARN": {
+              "Ref": "storageusersStreamArn"
             }
           }
         },
@@ -100,7 +125,11 @@
           ]
         },
         "Runtime": "python3.8",
-        "Layers": [],
+        "Layers": [
+          {
+            "Ref": "functionexodevopsadminsysutilsArn"
+          }
+        ],
         "Timeout": 25
       }
     },
@@ -110,12 +139,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "exodevopsadminsysLambdaRoled1d77076",
+            "exodevopsadminsysLambdaRolee2caebe0",
             {
               "Fn::Join": [
                 "",
                 [
-                  "exodevopsadminsysLambdaRoled1d77076",
+                  "exodevopsadminsysLambdaRolee2caebe0",
                   "-",
                   {
                     "Ref": "env"
@@ -204,14 +233,7 @@
             {
               "Effect": "Allow",
               "Action": [
-                "dynamodb:Get*",
-                "dynamodb:BatchGetItem",
-                "dynamodb:List*",
-                "dynamodb:Describe*",
-                "dynamodb:Scan",
-                "dynamodb:Query",
-                "dynamodb:Update*",
-                "dynamodb:RestoreTable*"
+                "dynamodb:Delete*"
               ],
               "Resource": [
                 {
@@ -223,6 +245,35 @@
                     [
                       {
                         "Ref": "storagedynamo001Arn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storageusersArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storageusersArn"
                       },
                       "index/*"
                     ]

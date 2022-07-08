@@ -82,7 +82,8 @@
           "deploymentBucketName": "amplify-exodevopsadminsys-test-103559-deployment",
           "s3Key": "amplify-builds/getAnalyses-676945476f7953754c61-build.zip"
         },
-        "updateAnalyse": {}
+        "updateAnalyse": {},
+        "deleteAnalyse": {}
       }
     }
   },
@@ -107,15 +108,27 @@
       "function": {
         "CreateAnalyse": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/CreateAnalyse-64582f73744e63486d6a-build.zip"
+          "s3Key": "amplify-builds/CreateAnalyse-49376756355741705435-build.zip"
         },
         "getValidateUserId": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/getValidateUserId-676436724c6c58734c31-build.zip"
+          "s3Key": "amplify-builds/getValidateUserId-5736486f794e35585a35-build.zip"
         },
         "exodevopsadminsysutils": {
           "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
-          "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersion6006e7e9-build.zip"
+          "s3Key": "amplify-builds/exodevopsadminsysutils-LambdaLayerVersionab128fef-build.zip"
+        },
+        "getAnalyses": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
+          "s3Key": "amplify-builds/getAnalyses-57613450514172456d4e-build.zip"
+        },
+        "updateAnalyse": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
+          "s3Key": "amplify-builds/updateAnalyse-487a3553566352356750-build.zip"
+        },
+        "deleteAnalyse": {
+          "deploymentBucketName": "amplify-exodevopsadminsys-julesenv-135841-deployment",
+          "s3Key": "amplify-builds/deleteAnalyse-647a614455704a6c4666-build.zip"
         }
       }
     }

@@ -50,7 +50,7 @@ export default {
       } catch (e) {
         console.log(e)
       }
-    }
+    },
   },
   mounted: async function () {
     this.analyses = await this.fetchAnalysis()
